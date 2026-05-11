@@ -1,191 +1,154 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Research & Notes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS VARIABLES: These make it easy to manage colors and enable Dark Mode */
+        :root {
+            --bg-color: #fcfcfc;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --accent-color: #3182ce;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --transition-speed: 0.3s;
+        }
+
+        /* DARK MODE VARIABLES: JavaScript will activate these */
+        [data-theme="dark"] {
+            --bg-color: #14241d;     /* Deep forest green background */
+            --text-main: #e2f0e9;    /* Soft mint-white for readable text */
+            --text-muted: #9ab3a5;   /* Muted sage for secondary text */
+            --accent-color: #66d9a1; /* Bright emerald green for links */
+            --card-bg: #1e332a;      /* Slightly lighter green for cards */
+            --border-color: #2d4a3e; /* Subtle green borders */
+        }
+
+        /* BASE STYLES */
+        body {
+            font-family: 'Lora', serif; /* Elegant serif for reading */
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 40px 20px;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif; /* Clean sans-serif for headings */
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #2b6cb0;
+        }
+
+        /* HEADER & DARK MODE BUTTON */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        button#theme-toggle {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            transition: all var(--transition-speed);
+        }
+
+        button#theme-toggle:hover {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* CARD LAYOUT FOR PAPERS/NOTES */
+        .paper-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-3px); /* Slight lift effect on hover */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .paper-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            color: var(--text-main);
+        }
+
+        .paper-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Home | Research &amp; Notes&lt;/title&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Importing a clean, modern font --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Lora:ital@0;1&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* CSS VARIABLES: These make it easy to manage colors and enable Dark Mode */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg-color: #fcfcfc;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-main: #2d3748;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #718096;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent-color: #3182ce;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--border-color: #e2e8f0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--transition-speed: 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* DARK MODE VARIABLES: JavaScript will activate these */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>[data-theme="dark"] {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg-color: #14241d; <span class="Apple-converted-space">    </span>/* Deep forest green background */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-main: #e2f0e9;<span class="Apple-converted-space">    </span>/* Soft mint-white for readable text */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #9ab3a5; <span class="Apple-converted-space">  </span>/* Muted sage for secondary text */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent-color: #66d9a1; /* Bright emerald green for links */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #1e332a;<span class="Apple-converted-space">      </span>/* Slightly lighter green for cards */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--border-color: #2d4a3e; /* Subtle green borders */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* BASE STYLES */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Lora', serif; /* Elegant serif for reading */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.7;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: background-color var(--transition-speed), color var(--transition-speed);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1, h2, h3 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif; /* Clean sans-serif for headings */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: color var(--transition-speed);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>a:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: underline;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #2b6cb0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* HEADER &amp; DARK MODE BUTTON */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>button#theme-toggle {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all var(--transition-speed);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>button#theme-toggle:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 4px rgba(0,0,0,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* CARD LAYOUT FOR PAPERS/NOTES */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.paper-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 1px 3px rgba(0,0,0,0.05);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.2s, box-shadow 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.paper-card:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-3px); /* Slight lift effect on hover */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 6px rgba(0,0,0,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.paper-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 0 10px 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.paper-meta {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 style="margin: 0;"&gt;Ripudaman Singh&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span style= "font-size: 12px; color: var(--text-muted); font-family: 'Inter', sans-serif;"&gt;One cannot invent the structure of an object. The most we can do is patiently bring it to the light of day, with humility.&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- This button triggers the JavaScript --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="theme-toggle"&gt; Dark Mode&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;I am an undergraduate in mathematics.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!--&lt;p&gt;&lt;a href="#"&gt;Curriculum Vitae (PDF)&lt;/a&gt; | &lt;code&gt;ripudamansingh1302@gmail.com&lt;/code&gt;&lt;/p&gt;</p>
-<p class="p1">--&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Notes&lt;/h2&gt;</p>
-<p class="p1">&lt;!-- <span class="Apple-converted-space">   </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="paper-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 class="paper-title"&gt;Blowing up the origin of A2: Nodal and Cuspidal Curves&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="paper-meta"&gt;Technical Notes • 2026&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="margin: 0; font-size: 0.95rem;"&gt;Detailed calculations focusing on the mechanics of resolving classic plane curve singularities.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top: 10px;"&gt;&lt;a href="#"&gt;[Read PDF]&lt;/a&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="paper-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 class="paper-title"&gt;Properties of Morphisms in Scheme Theory&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="paper-meta"&gt;Reading Notes • 2026&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="margin: 0; font-size: 0.95rem;"&gt;An analysis of finite and proper morphisms, exploring the valuative criterion for properness.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top: 10px;"&gt;&lt;a href="#"&gt;[Read PDF]&lt;/a&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">--&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- JAVASCRIPT SECTION --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>// 1. Grab the button element from the HTML</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const toggleBtn = document.getElementById('theme-toggle');</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// 2. Listen for a click on that button</p>
-<p class="p1"><span class="Apple-converted-space">        </span>toggleBtn.addEventListener('click', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>// 3. Check the current theme</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let currentTheme = document.documentElement.getAttribute('data-theme');</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// 4. Switch it!</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (currentTheme === 'dark') {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>document.documentElement.removeAttribute('data-theme');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>toggleBtn.innerText = 'Dark Mode';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>document.documentElement.setAttribute('data-theme', 'dark');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>toggleBtn.innerText = 'Light Mode';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <header>
+        <div>
+            <h1 style="margin: 0;">Ripudaman Singh</h1>
+            <span style="font-size: 12px; color: var(--text-muted); font-family: 'Inter', sans-serif;">One cannot invent the structure of an object. The most we can do is patiently bring it to the light of day, with humility.</span>
+        </div>
+        <button id="theme-toggle">Dark Mode</button>
+    </header>
+
+    <p>I am an undergraduate in mathematics.</p>
+    <h2>Notes</h2>
+
+    <script>
+        // 1. Grab the button element from the HTML
+        const toggleBtn = document.getElementById('theme-toggle');
+        
+        // 2. Listen for a click on that button
+        toggleBtn.addEventListener('click', () => {
+            // 3. Check the current theme
+            let currentTheme = document.documentElement.getAttribute('data-theme');
+            
+            // 4. Switch it!
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                toggleBtn.innerText = 'Dark Mode';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                toggleBtn.innerText = 'Light Mode';
+            }
+        });
+    </script>
+
 </body>
 </html>
