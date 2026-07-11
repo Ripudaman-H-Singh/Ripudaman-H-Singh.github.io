@@ -33,91 +33,87 @@
 
         /* BASE STYLES */
         body {
-            font-family: 'Lora', serif; /* Elegant serif for reading [cite: 2] */
-            font-size: 18px; [cite: 2]
-            line-height: 1.7; [cite: 3]
-            color: var(--text-main); [cite: 3]
-            background-color: var(--bg-color); [cite: 3]
-            margin: 0 auto; [cite: 3]
-            max-width: 800px; [cite: 3]
-            padding: 40px 20px; [cite: 3]
-            transition: background-color var(--transition-speed), color var(--transition-speed); [cite: 3]
+            font-family: 'Lora', serif; /* Elegant serif for reading */
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 40px 20px;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
         }
 
         h1, h2, h3 {
-            font-family: 'Inter', sans-serif; /* Clean sans-serif for headings [cite: 4, 5] */
-            font-weight: 600; [cite: 5]
+            font-family: 'Inter', sans-serif; /* Clean sans-serif for headings */
+            font-weight: 600;
         }
 
         a {
-            color: var(--accent-color); [cite: 6]
-            text-decoration: none; [cite: 6]
-            transition: color var(--transition-speed); [cite: 6]
-        }
-
-        a:hover {
-            text-decoration: underline; [cite: 7]
-            color: #2b6cb0; [cite: 7]
-        }
-
-        /* HEADER & DARK MODE BUTTON */
-        header {
-            display: flex; [cite: 8]
-            justify-content: space-between; [cite: 9]
-            align-items: center; [cite: 9]
-            border-bottom: 2px solid var(--border-color); [cite: 9]
-            padding-bottom: 20px; [cite: 9]
-            margin-bottom: 40px; [cite: 9]
-        }
-
-        button#theme-toggle {
-            background: none; [cite: 10]
-            border: 1px solid var(--border-color); [cite: 10]
-            color: var(--text-main); [cite: 10]
-            padding: 8px 16px; [cite: 10]
-            border-radius: 20px; [cite: 10]
-            cursor: pointer; [cite: 11]
-            font-family: 'Inter', sans-serif; [cite: 11]
-            font-size: 14px; [cite: 11]
-            transition: all var(--transition-speed); [cite: 11]
-        }
-
-        button#theme-toggle:hover {
-            background-color: var(--card-bg); [cite: 11]
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); [cite: 12]
-        }
-
-        /* MINIMALIST NOTES LAYOUT */
-        .note-item {
-            margin-bottom: 24px;
-            padding-bottom: 12px;
-            /* Subtle bottom dividing line between items. Remove if you want zero borders! */
-            border-bottom: 1px solid var(--border-color); 
-        }
-
-        .note-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin: 0 0 6px 0;
-        }
-
-        /* Makes the title itself the clickable link without looking like a button or card */
-        .note-title a {
-            color: var(--text-main);
+            color: var(--accent-color);
             text-decoration: none;
             transition: color var(--transition-speed);
         }
 
-        .note-title a:hover {
-            color: var(--accent-color);
+        a:hover {
             text-decoration: underline;
+            color: #2b6cb0;
         }
 
-        .note-meta {
+        /* HEADER & DARK MODE BUTTON */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        button#theme-toggle {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            transition: all var(--transition-speed);
+        }
+
+        button#theme-toggle:hover {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* CARD LAYOUT FOR PAPERS/NOTES */
+        .paper-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-3px); /* Slight lift effect on hover */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .paper-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            color: var(--text-main);
+        }
+
+        .paper-meta {
             font-size: 0.9rem;
             color: var(--text-muted);
-            margin: 0;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -134,11 +130,11 @@
     <p>I am an undergraduate in mathematics.</p>
     <h2>Notes</h2>
 
-    <div class="note-item">
-        <h3 class="note-title">
+    <div class="paper-card">
+        <h3 class="paper-title">
             <a href="kmlafinal.pdf" target="_blank">On separating Weyl group orbits</a>
         </h3>
-        <p class="note-meta">June 2026 • Part of assessment for a course on KMLA.</p>
+        <div class="paper-meta">June 2026 • Part of assessment for a course on KMLA.</div>
     </div>
 
     <script>
