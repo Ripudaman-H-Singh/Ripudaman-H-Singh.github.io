@@ -87,33 +87,37 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* CARD LAYOUT FOR PAPERS/NOTES */
-        .paper-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
+        /* MINIMALIST NOTES LAYOUT */
+        .note-item {
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            /* Subtle bottom dividing line between items. Remove if you want zero borders! */
+            border-bottom: 1px solid var(--border-color); 
         }
 
-        .paper-card:hover {
-            transform: translateY(-3px); /* Slight lift effect on hover */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .paper-title {
+        .note-title {
             font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            margin: 0 0 10px 0;
-            color: var(--text-main);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0 0 6px 0;
         }
 
-        .paper-meta {
+        /* Makes the title itself the clickable link without looking like a button or card */
+        .note-title a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        .note-title a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .note-meta {
             font-size: 0.9rem;
             color: var(--text-muted);
-            margin-bottom: 10px;
+            margin: 0;
         }
     </style>
 </head>
@@ -130,11 +134,11 @@
     <p>I am an undergraduate in mathematics.</p>
     <h2>Notes</h2>
 
-    <div class="paper-card">
-        <h3 class="paper-title">
+    <div class="note-item">
+        <h3 class="note-title">
             <a href="kmlafinal.pdf" target="_blank">On separating Weyl group orbits</a>
         </h3>
-        <div class="paper-meta">June 2026 • Part of assessment for a course on KMLA.</div>
+        <p class="note-meta">June 2026 • Part of assessment for a course on KMLA.</p>
     </div>
 
     <script>
@@ -144,18 +148,4 @@
         // 2. Listen for a click on that button
         toggleBtn.addEventListener('click', () => {
             // 3. Check the current theme
-            let currentTheme = document.documentElement.getAttribute('data-theme');
-            
-            // 4. Switch it!
-            if (currentTheme === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                toggleBtn.innerText = 'Dark Mode';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                toggleBtn.innerText = 'Light Mode';
-            }
-        });
-    </script>
-
-</body>
-</html>
+            let
